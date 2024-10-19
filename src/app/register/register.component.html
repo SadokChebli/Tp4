@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Responsive Registration Form | CodingLab </title>
+  <link rel="stylesheet" href="register.component.css">
+</head>
+<body>
+<div class="container">
+    <div class="title">Registration</div>
+    <div class="content">
+      <!-- Use (ngSubmit) for handling form submission -->
+      <form (ngSubmit)="register()" novalidate>
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Full Name</span>
+            <input type="text" placeholder="Enter your name" [(ngModel)]="user.fullName" name="fullName" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Username</span>
+            <input type="text" placeholder="Enter your username" [(ngModel)]="user.username" name="username" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" placeholder="Enter your email" [(ngModel)]="user.email" name="email" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" placeholder="Enter your number" [(ngModel)]="user.phoneNumber" name="phoneNumber" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" [(ngModel)]="user.password" name="password" required>
+          </div>
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input type="password" placeholder="Confirm your password" [(ngModel)]="user.confirmPassword" name="confirmPassword" required>
+          </div>
+        </div>
+        <!-- Submit button -->
+        <div class="button">
+            <button type="submit">Register</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

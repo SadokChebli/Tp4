@@ -1,0 +1,178 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 24px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #818285;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .left * {
+    margin-right: 25px;
+  }
+  
+  .logo {
+    height: 65px;
+  }
+  
+  .cart {
+    display: flex;
+    position: relative;
+  }
+  
+  .cartCount {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    top: -7px;
+    right: -15px;
+    border-radius: 25px;
+    background-color: #f590c4;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .cartCount div {
+    margin: auto;
+  }
+  
+  .right {
+    display: flex;
+    align-items: center;
+    margin-right: 25px;
+  }
+  
+  .right * {
+    margin-left: 25px;
+  }
+  
+  .right img {
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  .sign-out {
+    position: absolute;
+    top: 60px;
+    right: 30px;
+  }
+
+  body {
+    background-color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #444;
+  }
+  
+  a {
+    color: #444;
+    text-decoration: none;
+  }
+  
+  a.active {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #d25ca1;
+  }
+  
+  a.button.active {
+    padding-bottom: 5px;
+    border-bottom: 2px solid #d25ca1;
+  }
+  
+  a:visited {
+    color: #444;
+  }
+  
+  a:hover {
+    color: #5cadd2;
+  }
+  
+ 
+  
+  .cta {
+    color: #4400ff;
+  }
+  
+  a.cta {
+    color: #4400ff;
+  }
+  
+  a.cta:visited {
+    color: #4400ff;
+  }
+  
+  a.cta:hover {
+    color: #5cadd2;
+  }
+  
+  
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  button {
+    font-size: 15px;
+    padding: 15px 25px;
+    background-color: #5cadd2;
+    color: #fff;
+    border: 0;
+    box-shadow: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  a.button {
+    font-size: 15px;
+    padding: 15px 25px;
+    background-color: #5cadd2;
+    color: #fff;
+    border: 0;
+    box-shadow: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  a.button:hover {
+    color: #1c6d92;
+  }
+  
+  button:disabled {
+    background-color: #777;
+  }
+  
+  button:hover {
+    color: #1c6d92;
+  }
+  
+  button.cta {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #4b4b4b;
+    color: #ddd;
+  }
+  
+  button.cta:hover {
+    color: #fff;
+  }
+  
+  input {
+    padding: 15px;
+    font-size: 20px;
+  }
+  
+  .button.cta:disabled {
+    background-color: #4b4b4b;
+    color: #aaa;
+  }
