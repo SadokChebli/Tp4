@@ -1,16 +1,16 @@
+import { AsyncPipe, CommonModule, DatePipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
+import { Observable } from 'rxjs';
 import { Task } from '../../task.model';
-import { AsyncPipe, DatePipe, CommonModule } from '@angular/common';
 import { TaskService } from '../../task.service';
 import { TaskFormComponent } from '../task-form/task-form.component';
-import { Observable } from 'rxjs';
 
 const emptyTask = {
   name: '',
   description: '',
-  dueDate: new Date(),
+  dueDate: '',
   completed: false,
-  project: 1,
+  project: null,
   id: 0,
 };
 
@@ -22,40 +22,7 @@ const emptyTask = {
   styleUrl: './task-list.component.css',
 })
 export class TaskListComponent {
-  tasks: Task[] = [
-    {
-      id: 1,
-      name: 'Design wireframe',
-      description: '',
-      completed: false,
-      dueDate: new Date('2023-07-31'),
-      project: 1,
-    },
-    {
-      id: 2,
-      name: 'Develop frontend',
-      description: '',
-      completed: true,
-      dueDate: new Date('2023-06-15'),
-      project: 1,
-    },
-    {
-      id: 3,
-      name: 'Implement backend',
-      description: '',
-      completed: false,
-      dueDate: new Date('2023-08-15'),
-      project: 1,
-    },
-    {
-      id: 4,
-      name: 'Have a party',
-      description: '',
-      completed: true,
-      dueDate: new Date('2023-11-15'),
-      project: 1,
-    },
-  ];
+  tasks: Task[] = [];
   showModal: boolean = false;
   formType: 'CREATE' | 'UPDATE' = 'CREATE';
   selectedTask: Task = emptyTask;

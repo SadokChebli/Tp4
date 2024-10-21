@@ -3,6 +3,8 @@ import { AuthService } from '../auth.service';
 import { FormsModule } from '@angular/forms';
 import { Router, RouterModule } from '@angular/router';
 import Swal from 'sweetalert2';
+import { User } from '../user.model';
+
 
 @Component({
   selector: 'app-login',
@@ -13,6 +15,7 @@ import Swal from 'sweetalert2';
 })
 export class LoginComponent {
   credentials = { username: '', password: '' };
+  userProfile: User | null = null;
   
 
   constructor(private authService: AuthService, private router: Router) {}
@@ -28,21 +31,33 @@ export class LoginComponent {
       });
       return;
     }
-
+  
     this.authService.login(this.credentials).subscribe(
-      response => {
-        console.log('Login successful:', response);
+      (userProfile) => {
+        console.log('Login successful:', userProfile);
+  
+        // Store user profile in local storage (or state management)
+        localStorage.setItem('userProfile', JSON.stringify(userProfile));
+  
+        // Display success message
         Swal.fire({
           title: 'Success!',
           text: 'Login was successful!',
           icon: 'success',
           confirmButtonText: 'Okay'
         }).then(() => {
-          this.router.navigate(['/Home']);
+          // Navigate to home or profile page after success
+          if (this.credentials.username === 'admin') {
+            this.router.navigate(['/AdminHome']);
+          } else {
+            this.router.navigate(['/Home']);
+          }
         });
       },
-      error => {
+      (error) => {
         console.error('Login failed:', error);
+        
+        // Display error message
         Swal.fire({
           title: 'Error!',
           text: 'Login failed. Please try again.',
@@ -52,4 +67,5 @@ export class LoginComponent {
       }
     );
   }
+  
 }

@@ -1,7 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Task } from './task.model';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Task } from './task.model';
 
 const BASE_URL = 'http://localhost:8080/api';
 
@@ -19,7 +19,7 @@ export class TaskService {
 
   // addTask
   addTask(task: Task) {
-    return this.http.post(`${BASE_URL}/tasks`, { ...task, project: null });
+    return this.http.post(`${BASE_URL}/tasks`, {...task});
   }
 
   // updateTask

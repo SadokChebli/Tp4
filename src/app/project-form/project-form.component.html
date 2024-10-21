@@ -1,0 +1,33 @@
+<!-- src/app/home/project-form/project-form.component.html -->
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()">
+    <div>
+      <label for="name">Project Name:</label>
+      <input id="name" formControlName="name" />
+    </div>
+  
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description"></textarea>
+    </div>
+  
+    <div formArrayName="tasks">
+      <h4>Tasks</h4>
+      <div *ngFor="let task of tasks.controls; let i = index" [formGroupName]="i">
+        <label for="name-{{i}}">Task Title:</label>
+        <input id="name-{{i}}" formControlName="name" />
+        
+        <label for="description-{{i}}">Task Details:</label>
+        <textarea id="description-{{i}}" formControlName="description"></textarea>
+        
+        
+        
+        
+        <button type="button" (click)="removeTask(i)">Remove Task</button>
+      </div>
+      <button type="button" (click)="addTask()">Add Task</button>
+    </div>
+  
+    <button type="submit">Add Project</button>
+    <button type="button" (click)="close.emit()">Cancel</button>
+  </form>
+  

@@ -12,10 +12,10 @@ import { ProjectFormComponent } from '../project-form/project-form.component';
   selector: 'app-home',
   standalone: true,
   imports: [CommonModule, AsyncPipe, ProjectFormComponent, AppHeaderComponent, ProjectComponent],
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css'],
+  templateUrl: './admin-home.component.html',
+  styleUrls: ['./admin-home.component.css'],
 })
-export class HomeComponent {
+export class AdminHomeComponent {
   projects$!: Observable<Project[]>;  // Observable for the projects list
   isLoading = true;                   // Loading state indicator
   showProjectForm = false;            // Variable to control the visibility of the project form

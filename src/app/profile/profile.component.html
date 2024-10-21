@@ -1,0 +1,32 @@
+<!-- Add this to your index.html file in the <head> section -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="profile-container">
+    <button class="back-button" (click)="goBack()">
+        <i class="fas fa-arrow-left"></i> Back
+    </button>
+    <h2>User Profile</h2>
+    
+    <div class="profile-image">
+        <img [src]="imageUrl ? imageUrl : 'assets/nophoto.jpg'" alt="User Image" />
+    </div> <!-- User image placeholder -->
+    
+    <div class="upload-btn-wrapper">
+        <button class="custom-upload-btn">Upload Image</button>
+        <input type="file" (change)="onImageSelected($event); onFileSelected($event)" accept="image/*" />
+    </div>
+    <!-- Ajouter le bouton pour uploader l'image -->
+    <button class="custom-save-btn" (click)="uploadImage()" >Save Image</button>
+    
+    
+    <div class="profile-info">
+      <p><strong>Full Name:</strong> <span>{{ userProfile.fullName }}</span></p>
+      <p><strong>Username:</strong> <span>{{ userProfile.username }}</span></p>
+      <p><strong>Email:</strong> <span>{{ userProfile.email }}</span></p>
+      <p><strong>Phone Number:</strong> <span>{{ userProfile.phoneNumber }}</span></p>
+    </div>
+
+    <button class="button-logout" (click)="logout()">Logout</button>
+
+  </div>
+  

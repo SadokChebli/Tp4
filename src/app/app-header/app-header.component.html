@@ -1,12 +1,22 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 <div class="container">
     <div class="left">
-        <img class="logo" src="assets/logo.png" alt="Logo">
-      <a routerLink="/Home">Home</a>
-      <a routerLink="/catalog" >Catalog</a>
-      <div class="cart">
-        <a routerLink="/cart">Cart</a>
+      <img class="logo" src="assets/logo.png" alt="Logo">
+      <nav class="nav-links">
+        <a routerLink="/Home" routerLinkActive="active">Home</a>
+        <a routerLink="/catalog" routerLinkActive="active">Catalog</a>
+        <a routerLink="/cart" routerLinkActive="active" class="cart-link">
+          <span>Cart</span>
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </nav>
+    </div>
+    <div class="right">
+      <div class="profile">
+        <i class="fas fa-user-circle"></i> <!-- Profile icon -->
+        <span class="username" routerLink="/Profile">Profile</span>
       </div>
     </div>
   </div>
-
-
+  
